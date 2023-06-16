@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SingletonPattern
 {
-    //kullanıcının kendi başına yeni bir nesne oluşturmasını istemiyorsak ve bizim kontrolümüzde tek bir nesne üzerinden hareket etmek istiyorsak bu singelton patterni tercih ederiz.
+    // Kullanıcının kendi başına yeni bir nesne oluşturmasını istemiyorsak ve bizim kontrolümüzde tek bir nesne üzerinden hareket etmek istiyorsak singelton patterni tercih ederiz.
     public class CountryProvider
     {
         private static CountryProvider _instance;
@@ -37,6 +37,11 @@ namespace SingletonPattern
 
             Task.Delay(2000).GetAwaiter().GetResult();
             _instance = new CountryProvider();
+        }
+
+        private CountryProvider() 
+        {
+
         }
         public static CountryProvider Instance => _instance;
 
